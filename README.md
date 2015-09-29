@@ -1,2 +1,2 @@
 # Django Tutorial
-# at adding related objects
+# At part 2 change Template
