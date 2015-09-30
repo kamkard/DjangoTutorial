@@ -1,2 +1,2 @@
 # Django Tutorial
-# At part 2 change Template
+# At part 3 Template stuck at making first view.  Polls/urls.py is causing error
