@@ -1,2 +1,3 @@
 # Django Tutorial
-# At part 3 Template stuck at making first view.  Polls/urls.py is causing error
+# At part 3 Template, A shortcut: render()
+#Spend some time understanding how the links are all made (look at the folder structure?)
