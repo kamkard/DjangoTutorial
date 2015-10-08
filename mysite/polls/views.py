@@ -1,11 +1,11 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
 
 from .models import Question, Choice
 
-def indexView(generic.ListView):
+class IndexView(generic.ListView):
 	template_name = 'polls/index.html'
 	context_object_name = 'latest_question_list'
 
@@ -13,11 +13,11 @@ def indexView(generic.ListView):
 		"""Return the last five published questions. """
 		return Question.objects.order_by('-pub_date')[:5]
 
-def DetailView(generic.DetailView):
+class DetailView(generic.DetailView):
 	model = Question
 	template_name = 'polls/detail.html'
 
-def ResultView(generic.DetailView):
+class ResultView(generic.DetailView):
 	model = Question
 	template_name = 'polls/results.html'
 	
@@ -29,7 +29,7 @@ def vote(request, question_id):
 		#Redisplay the question voting form.
 		return render(request, 'polls/detail.html', 
 			{'question':p, 'error_message': "you didn't select a choice.",
-		})
+			})
 	else:
 		selected_choice.votes +=1
 		selected_choice.save()
