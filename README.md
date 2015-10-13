@@ -1,2 +1,2 @@
 # Django Tutorial
-# At part5 section test a view.
+# At part6 static code
